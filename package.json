@@ -9,6 +9,8 @@
     "coc": "^0.0.82"
   },
   "scripts": {
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
     "build": "tsup-node"
   },
   "devDependencies": {
