@@ -1,6 +1,6 @@
 {
   "name": "coc-twoslash-queries",
-  "version": "0.1.0",
+  "version": "0.0.0",
   "packageManager": "pnpm@8.10.5",
   "description": "coc.nvim extension which adds support for twoslash queries into typescript projects",
   "author": "auvred <aauvred@gmail.com> (https://github.com/auvred/)",
@@ -35,7 +35,8 @@
   "scripts": {
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
-    "build": "tsup-node"
+    "build": "tsup-node",
+    "release": "pnpx bumpp"
   },
   "devDependencies": {
     "@auvred/eslint-config": "^0.6.0",
