@@ -11,7 +11,7 @@
 `:CocInstall coc-twoslash-queries`
 
 > [!IMPORTANT]
-> This extension requires [`coc-tsserver`](https://github.com/neoclide/coc-tsserver) extension to be installed because it is used to retrieve type information
+> This extension requires [`coc-tsserver`](https://github.com/neoclide/coc-tsserver) extension to be installed (it is used to retrieve type information)
 
 ## Commands
 
