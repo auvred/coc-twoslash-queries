@@ -34,22 +34,19 @@ function registerInsertTwoSlashQueryCommand(
   context: coc.ExtensionContext,
 ): void {
   context.subscriptions.push(
-    coc.commands.registerCommand(
-      'twoslash-queries.insert-twoslash-query',
-      async () => {
-        const { document, position } = await coc.workspace.getCurrentState()
+    coc.commands.registerCommand('twoslash.insertTwoslashQuery', async () => {
+      const { document, position } = await coc.workspace.getCurrentState()
 
-        const eolRange = document.lineAt(position.line).range.end
-        const comment = `\n${'//'.padEnd(position.character, ' ').concat('^?')}`
+      const eolRange = document.lineAt(position.line).range.end
+      const comment = `\n${'//'.padEnd(position.character, ' ').concat('^?')}`
 
-        const d = await coc.workspace.document
-        d.applyEdits([
-          {
-            newText: comment,
-            range: { start: eolRange, end: eolRange },
-          },
-        ])
-      },
-    ),
+      const d = await coc.workspace.document
+      d.applyEdits([
+        {
+          newText: comment,
+          range: { start: eolRange, end: eolRange },
+        },
+      ])
+    }),
   )
 }
