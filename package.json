@@ -1,0 +1,22 @@
+{
+  "name": "coc-twoslash-queries",
+  "version": "0.1.0",
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "coc": "^0.0.82"
+  },
+  "scripts": {
+    "build": "tsup-node"
+  },
+  "devDependencies": {
+    "@auvred/eslint-config": "^0.6.0",
+    "coc.nvim": "0.0.83-next.9",
+    "eslint": "^8.56.0",
+    "prettier": "^3.1.1",
+    "tsup": "^8.0.1",
+    "typescript": "^5.3.3"
+  }
+}
