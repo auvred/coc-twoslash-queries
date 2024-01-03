@@ -50,6 +50,7 @@ export function createInlayHint({
     .replaceAll('\\n', ' ')
     .replaceAll('/n', ' ')
     .replaceAll('  ', ' ')
+    // eslint-disable-next-line no-control-regex
     .replaceAll(/[\u0000-\u001F\u007F-\u009F]/g, '')
 
   // Cut off hint if too long
