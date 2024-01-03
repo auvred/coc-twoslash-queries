@@ -18,18 +18,14 @@ export async function quickInfoRequest(
   // https://github.com/neoclide/coc-tsserver/blob/9ff880ef3fbf1680daefe4dacfafdce8ffd2817b/src/server/typescriptServiceClientHost.ts#L37
   const client = clientHost?.client
 
-  try {
-    // https://github.com/neoclide/coc-tsserver/blob/9ff880ef3fbf1680daefe4dacfafdce8ffd2817b/src/server/typescriptServiceClient.ts#L613
-    return await (client?.execute?.('quickinfo', {
-      file: coc.Uri.parse(model.uri).fsPath,
-      line: position.line + 1,
-      offset: position.character,
-    } satisfies ts.server.protocol.FileLocationRequestArgs) as Promise<
-      ts.server.protocol.QuickInfoResponse | undefined
-    >)
-  } catch (e) {
-    console.log(e)
-  }
+  // https://github.com/neoclide/coc-tsserver/blob/9ff880ef3fbf1680daefe4dacfafdce8ffd2817b/src/server/typescriptServiceClient.ts#L613
+  return await (client?.execute?.('quickinfo', {
+    file: coc.Uri.parse(model.uri).fsPath,
+    line: position.line + 1,
+    offset: position.character,
+  } satisfies ts.server.protocol.FileLocationRequestArgs) as Promise<
+    ts.server.protocol.QuickInfoResponse | undefined
+  >)
 }
 
 interface InlayHintInfo {

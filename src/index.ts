@@ -10,10 +10,16 @@ export function activate(context: coc.ExtensionContext): void {
 
 function registerInlayHintsProvider(context: coc.ExtensionContext): void {
   const provider: coc.InlayHintsProvider = {
-    provideInlayHints: async (model, iRange, cancel) => {
-      const offset = model.offsetAt(iRange.start)
-      const text = model.getText(iRange)
-      return await checkTwoslashQuery({ text, offset, model, cancel })
+    async provideInlayHints(model, iRange, cancel) {
+      try {
+        const offset = model.offsetAt(iRange.start)
+        const text = model.getText(iRange)
+        return await checkTwoslashQuery({ text, offset, model, cancel })
+      } catch (e) {
+        console.error('provideInlayHints error', e)
+      }
+
+      return []
     },
   }
 
