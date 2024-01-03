@@ -8,6 +8,14 @@
   "engines": {
     "coc": "^0.0.82"
   },
+  "contributes": {
+    "commands": [
+      {
+        "command": "twoslash.insertTwoslashQuery",
+        "title": "TwoSlash Query: Insert Below"
+      }
+    ]
+  },
   "scripts": {
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
