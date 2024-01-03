@@ -1,6 +1,6 @@
 {
   "name": "coc-twoslash-queries",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "packageManager": "pnpm@8.10.5",
   "description": "coc.nvim extension which adds support for twoslash queries into typescript projects",
   "author": "auvred <aauvred@gmail.com> (https://github.com/auvred/)",
